@@ -1,0 +1,19 @@
+/*
+**********************************************************
+* Parallax scrolling code remixed from page below:       *
+* https://www.w3schools.com/howto/howto_css_parallax.asp *
+**********************************************************
+*/
+
+.bgimg-footer {
+  background-image: url("../../assets/img/dublin/dublin.jpg");
+  opacity: 40% !important ;
+  height: 66% !important ;
+}
+
+.footer-details{
+  padding-top: 150px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.50);
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.50);
+}

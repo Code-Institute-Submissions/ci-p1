@@ -1,0 +1,497 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html {
+  width: 100%;
+  height: 100%; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  margin: 0 0 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 25px; }
+  @media (min-width: 768px) {
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0 0 35px; } }
+
+a {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #42DCA3; }
+  a:focus, a:hover {
+    text-decoration: none;
+    color: #1d9b6c; }
+
+#mainNav {
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: black; }
+  #mainNav .navbar-toggler {
+    font-size: 14px;
+    padding: 11px;
+    color: white;
+    border: 1px solid white; }
+  #mainNav .navbar-brand {
+    font-weight: 700; }
+  #mainNav a {
+    color: white; }
+  #mainNav .navbar-nav .nav-item {
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out; }
+    #mainNav .navbar-nav .nav-item:hover {
+      color: fade(white, 80%);
+      outline: none;
+      background-color: transparent; }
+    #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+      outline: none;
+      background-color: transparent;
+    }
+  @media (min-width: 992px) {
+    #mainNav {
+      /* padding-top: 20px;
+      padding-bottom: 20px; */
+      padding-top: 8px;
+      padding-bottom: 8px;
+      -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+      -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+      transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+      letter-spacing: 1px;
+      border-bottom: none;
+      /* background: transparent; */
+      background-color: rgba(0, 0, 0, 0.2);
+      /*  */
+    }
+      #mainNav.navbar-shrink {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        background: black; }
+      #mainNav .nav-link.active {
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.3); }
+        #mainNav .nav-link.active:hover {
+          color: white; } }
+
+.masthead {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 200px 0;
+  text-align: center;
+  color: white;
+  background: url("assets/img/header.jpg") no-repeat bottom center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  .masthead .intro-body {
+    display: table-cell;
+    vertical-align: middle; }
+    .masthead .intro-body .brand-heading {
+      font-size: 50px; }
+    .masthead .intro-body .intro-text {
+      font-size: 18px; }
+  @media (min-width: 768px) {
+    .masthead {
+      height: 100%;
+      padding: 0; }
+      .masthead .intro-body .brand-heading {
+        font-size: 100px; }
+      .masthead .intro-body .intro-text {
+        font-size: 22px; } }
+
+.btn-circle {
+  font-size: 26px;
+  width: 55px;
+  height: 55px;
+  margin-top: 15px;
+  line-height: 45px;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+  color: white;
+  border: 2px solid white;
+  border-radius: 100% !important;
+  background: transparent; }
+  .btn-circle:focus, .btn-circle:hover {
+    color: white;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1); }
+
+.content-section {
+  padding-top: 150px;
+  padding-bottom: 150px; }
+
+#map {
+  width: 100%;
+  height: 300px; }
+
+@media (min-width: 992px) {
+  .content-section {
+    padding-top: 200px;
+    padding-bottom: 200px; }
+  #map {
+    height: 350px; } }
+
+.btn {
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  border-radius: 0; }
+
+.btn-default {
+  color: #42DCA3;
+  border: 1px solid #42DCA3;
+  background-color: transparent; }
+  .btn-default:focus, .btn-default:hover {
+    color: black;
+    border: 1px solid #42DCA3;
+    outline: none;
+    background-color: #42DCA3; }
+
+ul.banner-social-buttons {
+  margin-top: 0; }
+  @media (max-width: 1199px) {
+    ul.banner-social-buttons {
+      margin-top: 15px; } }
+  @media (max-width: 767px) {
+    ul.banner-social-buttons li {
+      display: block;
+      margin-bottom: 20px;
+      padding: 0; }
+      ul.banner-social-buttons li:last-child {
+        margin-bottom: 0; } }
+
+footer {
+  padding: 50px 0; }
+  footer p {
+    font-size: 14px;
+    margin: 0; }
+
+::-moz-selection {
+  background: #fcfcfc;
+  background: rgba(255, 255, 255, 0.2);
+  text-shadow: none; }
+
+::selection {
+  background: #fcfcfc;
+  background: rgba(255, 255, 255, 0.2);
+  text-shadow: none; }
+
+img::selection {
+  background: transparent; }
+
+img::-moz-selection {
+  background: transparent; }
+
+body {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2); }
+
+
+body {
+  /* max-width: 100%; */
+  overflow-x: hidden;
+}
+/*  */
+#cesiumContainer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+/* leaflet */
+.map {
+  height: 600px;
+  padding: 0;
+}
+.viz-map {
+  height: 600px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+.hexbin-hexagon {
+	stroke: rgb(255, 255, 255);
+	stroke-width: .5px;
+}
+
+/*  */
+ ::-webkit-scrollbar-track
+ {
+   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+   background-color: #F5F5F5;
+   border-radius: 8px;
+ }
+
+::-webkit-scrollbar
+ {
+   width: 10px;
+   background-color: #F5F5F5;
+ }
+
+::-webkit-scrollbar-thumb
+ {
+   border-radius: 10px;
+   background-image: -webkit-gradient(linear,
+                      left bottom,
+                      left top,
+                      color-stop(0.85, rgb(38, 73, 177)),
+                      color-stop(0.60, rgb(140, 176, 250)),
+                      color-stop(0.40, rgb(63, 113, 175)),
+                      color-stop(0.14, rgb(28,58,148)));
+ }
+
+/*  */
+p {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+    "AppleGothic", sans-serif;
+}
+/* -*/
+.jumbotron {
+  border-radius: 0;
+}
+#dash {
+  background-color: #252525;
+}
+#dash2 {
+  background-color: #252525;
+}
+#dash3 {
+  background-color: #252525;
+}
+.dash {
+  width: 100%;
+  max-width: 100%;
+}
+.dash2 {
+
+}
+
+.dashw {
+  max-width: 100%;
+}
+.viz-titles {
+  margin-top: 3px;
+  margin-bottom: 15px;
+}
+.viz-title {
+  color: #b7b9ce;
+  margin: 0;
+}
+.viz-subtitle {
+  color: #5c5c61;
+  margin: 0;
+  font-size: 1em;
+  display: none;
+}
+.viz-item {
+  height: 480px;
+  width: 100%;
+}
+.viz-chart {
+  height: 440px;
+  width: 100%;
+  margin: 0;
+  background-color: #ebebeb !important ;
+  box-shadow: 5px 5px 10px #00000077;
+}
+.viz-data {
+  height: 800px;
+  width: 100%;
+  padding: 0;
+  background-color: #000;
+}
+/* DASH WIDGET SIZING */
+.d50 {
+  width: 50%;
+  height: 480px;
+}
+
+@media (max-width: 1199px) {
+  .d50 {
+    width: 50%;
+  }
+  }
+
+@media (max-width: 767px) {
+  .d50 {
+    width: 100%;
+  }
+    }
+
+/* 3D CSS text from: http://markdotto.com/playground/3d-text/ */
+.h13d {
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+    "AppleGothic", sans-serif;
+  font-size: 80px;
+  padding: 30px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  z-index: 1000;
+}
+
+.h23d {
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+    "AppleGothic", sans-serif;
+  font-size: 62px;
+  padding: 50px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+
+.h33d {
+  text-shadow: 0 0.5px 0 #ccc, 0 1px 0 #c9c9c9, 0 1.3px 0 #bbb,
+    0 1.7px 0 #b9b9b9, 0 2px 0 #aaa, 0 3px 0.5px rgba(0, 0, 0, 0.1),
+    0 0 2.5px rgba(0, 0, 0, 0.1), 0 0.5px 1.5px rgba(0, 0, 0, 0.3),
+    0 1.5px 2.5px rgba(0, 0, 0, 0.2), 0 2.5px 5px rgba(0, 0, 0, 0.25);
+  /*
+    0 5px 5px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.15); */
+
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+    "AppleGothic", sans-serif;
+  font-size: 27.5px;
+  padding: 5px 3px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+.h43d {
+  text-shadow: 0 0.5px 0 #ccc, 0 1px 0 #c9c9c9, 0 1.3px 0 #bbb,
+    0 1.7px 0 #b9b9b9, 0 2px 0 #aaa, 0 3px 0.5px rgba(0, 0, 0, 0.1),
+    0 0 2.5px rgba(0, 0, 0, 0.1), 0 0.5px 1.5px rgba(0, 0, 0, 0.3);
+  /*
+    0 1.5px 2.5px rgba(0, 0, 0, 0.2), 0 2.5px 5px rgba(0, 0, 0, 0.25),
+    0 3px 3px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.15); */
+
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+    "AppleGothic", sans-serif;
+  font-size: 22.5px;
+  padding: 3px 1.5px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+.fa3d {
+  text-shadow: 0 0.5px 0 #ccc, 0 1px 0 #c9c9c9, 0 1.3px 0 #bbb,
+    0 1.7px 0 #b9b9b9, 0 2px 0 #aaa, 0 3px 0.5px rgba(0, 0, 0, 0.1),
+    0 0 2.5px rgba(0, 0, 0, 0.1), 0 0.5px 1.5px rgba(0, 0, 0, 0.3),
+    0 1.5px 2.5px rgba(0, 0, 0, 0.2), 0 2.5px 5px rgba(0, 0, 0, 0.25),
+    0 5px 5px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.15);
+
+  font-size: 80px;
+  padding: 15px 10px;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+}
+
+/* ______________________________________________________ */
+/* Parallax scrolling code remixed from page below:       */
+/* https://www.w3schools.com/howto/howto_css_parallax.asp */
+/* ______________________________________________________ */
+
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5, .bgimg-footer {
+  position: relative;
+  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgimg-footer {
+  /* opacity: 0.65; */
+}
+.opacity1 {
+  /* opacity: 1 !important ; */
+}
+
+.bgimg-1 {
+  background-image: url("assets/img/sf/sf.jpg");
+  min-height: 100%;
+}
+.bgimg-2 {
+  background-image: url("assets/img/dublin/dublin.jpg");
+  min-height: 100%;
+}
+.bgimg-3 {
+  background-image: url("assets/img/sf/sf.jpg");
+  min-height: 100%;
+}
+.bgimg-4 {
+  background-image: url("assets/img/sf/sf.jpg");
+  min-height: 100%;
+}
+.bgimg-5 {
+  background-image: url("assets/img/sf/sf.jpg");
+  min-height: 100%;
+}
+.bgimg-footer {
+  background-image: url("assets/img/dublin/dublin.jpg");
+  min-height: 100%;
+}
+
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 45%;
+  width: 100%;
+  text-align: center;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  /* letter-spacing: 10px; */
+}
+.parallax {
+
+  height: 800px;
+
+}
+
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}

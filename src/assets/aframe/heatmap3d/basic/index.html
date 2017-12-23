@@ -1,0 +1,253 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>aframe-heatmap3d demo</title>
+	<script src="aframe.min.js"></script>
+	<script src="d3.js"></script>
+<!--
+	<script src="https://rawgit.com/aframevr/aframe/b6a082f/dist/aframe-master.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.1/d3.min.js"></script> 
+-->
+
+
+	<script src="../../aframe-heatmap3d.js"></script>
+	<!-- We will use StackBlur in this example -->
+	<script src="stackblur.min.js"></script>
+
+<!--
+	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.7.0/dist/aframe-extras.min.js"></script>
+	<script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/master/dist/aframe-orbit-controls-component.min.js"></script>
+-->
+
+	<script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/master/dist/aframe-orbit-controls-component.min.js"></script>
+
+
+	<style>
+	body {
+		font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+		line-height: 1.6;
+		font-weight: 400;
+		font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	#buttonPanel {
+		width:150px;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+	}
+	.button {
+		display: inline-block;
+		height: 38px;
+		padding: 0 30px;
+		color: #555;
+		text-align: center;
+		font-size: 11px;
+		font-weight: 600;
+		line-height: 38px;
+		letter-spacing: .1rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		white-space: nowrap;
+		background-color: transparent;
+		border-radius: 4px;
+		border: 1px solid #bbb;
+		cursor: pointer;
+		box-sizing: border-box;
+		color: #FFF;
+		background-color: #33C3F0;
+		border-color: #33C3F0;
+		width: 100%;
+		margin-top:20px;
+	}
+	.button:focus {
+		color: #FFF;
+		background-color: #1EAEDB;
+		border-color: #1EAEDB;
+	}
+	</style>
+	<script type="text/javascript">
+
+		function handleClick(region){
+			console.log('Switch to '+region);
+			var h=4, w;
+			var rm='surface';
+			var p='';
+			if (region==="Asia") { 
+				h=4; w= 8; p='hot';
+			} else if (region==="USA") {
+				h=2; w=h * (510/410);
+				rm = 'particles';
+				p='viridis';
+			} else if (region==="EU") {
+				h=4; w=4;
+				p='plasma';
+			}
+
+			document.getElementById('middle').setAttribute('aframe-heatmap3d', {
+				src: '#png' + region,
+				palette: p});
+			d3.select('#basemapEl').transition().delay(1400).attr('src','#png'+region);
+			//document.getElementById('basemapEl').setAttribute('src', '#png'+region);
+		} // handleClick()
+
+	</script>
+
+
+
+
+</head>
+
+<body>
+	<a-scene >
+
+
+		<a-assets>
+			<img id="pngAsia" src="asia_820.jpg"  style="display:none"/>
+			<img id="pngMobileAsia" src="asia_820.jpg"  style="display:none"/>
+			<img id="pngUSA" src="usa.jpg"  style="display:none"/>
+			<img id="pngMobileUSA" src="usa.jpg"  style="display:none"/>
+			<img id="pngEU" src="eu_128.jpg"  style="display:none"/>
+			<img id="pngMobileEU" src="eu_128.jpg"  style="display:none"/>
+		</a-assets>
+
+
+		<!--
+			Sky.
+		-->
+		<a-sky color="#eee"></a-sky>
+		<!-- Holodeck skybox -->
+
+
+		<!--
+			Loading indicator (wireframe box)
+		<a-box id="loading" depth="3" height="1"  width="6" color="#aaa" wireframe="true" opacity="0.5" position="0 0.5 0"></a-box>
+		-->
+
+
+
+		<!--
+			Base image. Note that the image uses tranparency but this renders with ugly grey edges if transparent=true
+		-->
+		<a-image id="basemapEl" src="#pngEU" width="6" height="3" transparent="false" rotation="-90 0 0" position="0 -0.01 0"> </a-image>
+
+
+
+		<!--
+			The heightmap3d is placed on top.
+			It always has a height (Y axis) of 1, so we use 'scale' to control the height.
+		-->
+		<a-entity	
+		id="middle"
+		aframe-heatmap3d="
+		src: #pngEU;
+		ignoreZeroValues:true; 
+		stackBlurRadius:1.0;
+		stackBlurRadiusMobile:0.5;
+		palette:plasma;
+		flipPalette:false; 
+		renderMode: surface;
+		scaleOpacity: true;
+		scaleOpacityMethod:log2;
+		opacityMin: 0.01; 
+		 width: 6; height: 3;" scale="1 0.5 1">
+		</a-entity>
+
+
+		<!--Righhand map -->
+		<a-entity	
+		id="right"
+		aframe-heatmap3d="
+		src: #pngEU;
+		ignoreZeroValues:false; 
+		stackBlurRadius:8.5;
+		stackBlurRadiusMobile:0.5;
+		palette:parula;
+		flipPalette:false; 
+		material: standard;
+		renderMode: particles;
+		particleSize:2.0;
+		metalness:0.3;
+		roughness:0.2;
+		stretch:true;
+		shininess: 80;
+		scaleOpacity: false;
+		 width: 6; height: 3;" position="7 0 0" scale="1 0.5 1">
+		</a-entity>
+		<!-- Lefthand map. Use small PNG file to get widely spaced wireframe. -->
+		<a-entity	
+		id="left"
+		aframe-heatmap3d="
+		src: #pngMobileEU;
+		stackBlurRadius:8.5;
+		palette: viridis;
+		wireframe:true;
+		ignoreZeroValues:false;
+		material: standard;
+		metalness:.7;
+		roughness: 1;
+		opacityMin:0.3;
+		shininess:0;
+		scaleOpacityMethod:const;
+		 width: 6; height: 3;" position="-7 0 0" scale="1 1 1">
+		</a-entity>
+
+		<!-- Note that we use a lower-resolution image for the wireframe, so that we can get wider spacing between the wires -->
+
+
+
+		<!--
+			Target for orbit camera
+		-->
+		<a-entity
+			id="target"
+			geometry="primitive: box"
+			position="0 0 0"
+			material="visible:false">
+		</a-entity>
+
+		<!-- Default lighting injected by A-Frame. -
+		<a-entity light="type: ambient; color: #fff"></a-entity>
+		-->
+		<a-entity light="type: directional; target: middle; color: #FFF; intensity: 0.5" position="2 4 5"></a-entity>
+		<a-entity light="intensity: 2; distance: 1; angle: 90; target: middle; type:directional" position="5 5 3"></a-entity>
+
+
+
+		<!-- 
+			Cameras.
+			Orbit cam for 2D and look-cam for VR, toggled using aframe_orbit_camera_vrtoggle_component.
+		-->
+		<a-entity
+			camera="active:true"
+			id="camera_orbit"
+			position="0 2 2"
+			look-controls
+			wasd-controls="fly:true"
+			orbit-controls="
+			autoRotate: false;
+			target: #target;
+			enableDamping: true;
+			dampingFactor: 0.125;
+			rotateSpeed:0.15;
+			zoomSpeed:0.5;
+			maxPolarAngle:1.85;
+			minDistance:1;
+			maxDistance:10;">
+		</a-entity>
+
+
+
+	</a-scene>
+
+
+
+<div id="buttonPanel">
+	<div class="button" style="top:0px; " onclick="handleClick('Asia')">Asia</div>
+	<div class="button" style="top:150px;"  onclick="handleClick('EU')">Europe</div>
+	<div class="button" style="top:280px;"  onclick="handleClick('USA')">N. America</div>
+</div>
+
+
+</body>
+
+</html>

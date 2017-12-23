@@ -1,0 +1,21 @@
+
+
+<section class="m-0 jumbotron text-center bg-dark text-white">
+  <div class="container">
+  <h1 class="jumbotron-heading h13d">Weather - Live</h1>
+  <p class="lead text-muted">Forecast code from http tutorial on coursetro.com</p>
+
+  </div>
+  </section>
+  <section class="viz-map m-0 p-0 jumbotron text-center text-white">
+
+    <div *ngIf="chart">
+      <canvas id="canvas">{{ chart }}</canvas>
+    </div>
+
+  </section>
+  <section class="m-0 jumbotron text-center bg-dark  text-white">
+  <div class="container">
+    <h1 class="jumbotron-heading h13d"></h1>
+  </div>
+  </section>

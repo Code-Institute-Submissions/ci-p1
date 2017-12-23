@@ -1,0 +1,24 @@
+<!-- Control Form -->
+<div class="col-sm-12 col-md-6 col-lg-4">
+
+    <form class="form-horizontal">
+      <button type="button" class="btn btn-default" (click)="generateHexbinData()">Generate Data</button>
+    </form>
+
+  </div>
+
+  <!-- Map -->
+  <div class="col-md-12" style="margin-top:16px;">
+
+    <div leaflet style="height: 300px;"
+       [leafletOptions]="options"
+       [leafletBaseLayers]="baseLayers"
+       [leafletLayersControlOptions]="layersControlOptions">
+
+      <div [leafletHexbin]="hexbinData1" [leafletHexbinOptions]="hexbinOptions1" (leafletHexbinLayerReady)="layerReady($event)"></div>
+      <div [leafletHexbin]="hexbinData2" [leafletHexbinOptions]="hexbinOptions2" (leafletHexbinLayerReady)="layerReady($event)"></div>
+      <div [leafletHexbin]="hexbinData3" [leafletHexbinOptions]="hexbinOptions3" (leafletHexbinLayerReady)="layerReady($event)"></div>
+
+    </div>
+
+  </div>
